@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "7ac15737-c8bc-401e-b7f2-27bb07591b5b",
+		"name": "Anomaly-Detection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36160696"
+	},
+	"item": [
+		{
+			"name": "Get all anomalies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9098/api/anomalies?limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"api",
+						"anomalies"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9098/api/anomalies?limit=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9098",
+							"path": [
+								"api",
+								"anomalies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c7b-kpxRN6LT530vNBXHRACdtgIqqVM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Apr 2025 13:17:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"count\": 20,\n    \"limit\": 20,\n    \"startAfter\": null,\n    \"data\": [\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 33.15% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744742858123,\n            \"areaMeterTotal\": 68.98000000000002,\n            \"householdMeterTotal\": 46.11000000000004,\n            \"difference\": 22.869999999999976,\n            \"percentageDifference\": 33.15453754711506,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 447.02% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744742978138,\n            \"areaMeterTotal\": 201.23000000000002,\n            \"householdMeterTotal\": 1100.77,\n            \"difference\": 899.54,\n            \"percentageDifference\": 447.02082194503794,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 100.00% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764630576,\n            \"areaMeterTotal\": 32.569999999999936,\n            \"householdMeterTotal\": 0,\n            \"difference\": 32.569999999999936,\n            \"percentageDifference\": 100,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 920.27% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764750608,\n            \"areaMeterTotal\": 48.450000000000045,\n            \"householdMeterTotal\": 494.32,\n            \"difference\": 445.86999999999995,\n            \"percentageDifference\": 920.2683178534562,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 396.27% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764780610,\n            \"areaMeterTotal\": 65.21000000000004,\n            \"householdMeterTotal\": 323.62,\n            \"difference\": 258.40999999999997,\n            \"percentageDifference\": 396.2735776721359,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 38.36% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764840619,\n            \"areaMeterTotal\": 61.8599999999999,\n            \"householdMeterTotal\": 85.59000000000003,\n            \"difference\": 23.730000000000132,\n            \"percentageDifference\": 38.360814742968266,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 58.51% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764870627,\n            \"areaMeterTotal\": 40.559999999999945,\n            \"householdMeterTotal\": 16.829999999999927,\n            \"difference\": 23.730000000000018,\n            \"percentageDifference\": 58.505917159763435,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 29.24% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815893317,\n            \"areaMeterTotal\": 99.22000000000025,\n            \"householdMeterTotal\": 70.21000000000004,\n            \"difference\": 29.01000000000022,\n            \"percentageDifference\": 29.238056843378494,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 26.74% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815923324,\n            \"areaMeterTotal\": 90.5600000000004,\n            \"householdMeterTotal\": 114.77999999999992,\n            \"difference\": 24.219999999999516,\n            \"percentageDifference\": 26.744699646642456,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 13.93% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815953338,\n            \"areaMeterTotal\": 113.09999999999945,\n            \"householdMeterTotal\": 97.34999999999997,\n            \"difference\": 15.749999999999488,\n            \"percentageDifference\": 13.925729442970436,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 1267.00% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815983345,\n            \"areaMeterTotal\": 31.030000000000655,\n            \"householdMeterTotal\": 424.17999999999995,\n            \"difference\": 393.1499999999993,\n            \"percentageDifference\": 1266.9996777311987,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 333.59% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744816013360,\n            \"areaMeterTotal\": 75.21999999999935,\n            \"householdMeterTotal\": 326.15,\n            \"difference\": 250.93000000000063,\n            \"percentageDifference\": 333.5947886200516,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 59.79% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814539296,\n            \"currentConsumption\": 106.28,\n            \"averageConsumption\": 264.28,\n            \"difference\": 157.99999999999997,\n            \"percentageDifference\": 59.78507643408506,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 66.95% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814539304,\n            \"currentConsumption\": 61.22999999999999,\n            \"averageConsumption\": 185.27999999999997,\n            \"difference\": 124.04999999999998,\n            \"percentageDifference\": 66.95272020725389,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 99.98% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814539310,\n            \"currentConsumption\": 287.83,\n            \"averageConsumption\": 143.92999999999998,\n            \"difference\": 143.9,\n            \"percentageDifference\": 99.97915653442647,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 141.81% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814580922,\n            \"currentConsumption\": 435.0199999999999,\n            \"averageConsumption\": 179.90499999999997,\n            \"difference\": 255.11499999999995,\n            \"percentageDifference\": 141.80539729301574,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 2127.43% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744816005771,\n            \"currentConsumption\": 250.93000000000006,\n            \"averageConsumption\": 11.265454545454531,\n            \"difference\": 239.66454545454553,\n            \"percentageDifference\": 2127.4289864428697,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 84.27% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-2\",\n            \"timestamp\": 1744764633844,\n            \"currentConsumption\": 2.6100000000000136,\n            \"averageConsumption\": 16.589999999999975,\n            \"difference\": 13.979999999999961,\n            \"percentageDifference\": 84.26763110307404,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 74.46% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-2\",\n            \"timestamp\": 1744764747001,\n            \"currentConsumption\": 14.629999999999995,\n            \"averageConsumption\": 8.38599999999999,\n            \"difference\": 6.244000000000005,\n            \"percentageDifference\": 74.45742904841417,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 55.66% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-2\",\n            \"timestamp\": 1744764749534,\n            \"currentConsumption\": 4.17999999999995,\n            \"averageConsumption\": 9.426666666666657,\n            \"difference\": 5.246666666666707,\n            \"percentageDifference\": 55.65770862800614,\n            \"windowSize\": 30000\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all anomalies of District",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9098/api/anomalies/districts?limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"api",
+						"anomalies",
+						"districts"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all anomalies of District",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9098/api/anomalies/districts?limit=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9098",
+							"path": [
+								"api",
+								"anomalies",
+								"districts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5971"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1753-iml0czIMzleOPtBVWauH/1+yyz0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Apr 2025 13:16:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"count\": 17,\n    \"limit\": 20,\n    \"startAfter\": null,\n    \"data\": [\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 33.15% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744742858123,\n            \"areaMeterTotal\": 68.98000000000002,\n            \"householdMeterTotal\": 46.11000000000004,\n            \"difference\": 22.869999999999976,\n            \"percentageDifference\": 33.15453754711506,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 447.02% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744742978138,\n            \"areaMeterTotal\": 201.23000000000002,\n            \"householdMeterTotal\": 1100.77,\n            \"difference\": 899.54,\n            \"percentageDifference\": 447.02082194503794,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 100.00% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764630576,\n            \"areaMeterTotal\": 32.569999999999936,\n            \"householdMeterTotal\": 0,\n            \"difference\": 32.569999999999936,\n            \"percentageDifference\": 100,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 920.27% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764750608,\n            \"areaMeterTotal\": 48.450000000000045,\n            \"householdMeterTotal\": 494.32,\n            \"difference\": 445.86999999999995,\n            \"percentageDifference\": 920.2683178534562,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 396.27% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764780610,\n            \"areaMeterTotal\": 65.21000000000004,\n            \"householdMeterTotal\": 323.62,\n            \"difference\": 258.40999999999997,\n            \"percentageDifference\": 396.2735776721359,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 38.36% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764840619,\n            \"areaMeterTotal\": 61.8599999999999,\n            \"householdMeterTotal\": 85.59000000000003,\n            \"difference\": 23.730000000000132,\n            \"percentageDifference\": 38.360814742968266,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 58.51% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744764870627,\n            \"areaMeterTotal\": 40.559999999999945,\n            \"householdMeterTotal\": 16.829999999999927,\n            \"difference\": 23.730000000000018,\n            \"percentageDifference\": 58.505917159763435,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 29.24% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815893317,\n            \"areaMeterTotal\": 99.22000000000025,\n            \"householdMeterTotal\": 70.21000000000004,\n            \"difference\": 29.01000000000022,\n            \"percentageDifference\": 29.238056843378494,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 26.74% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815923324,\n            \"areaMeterTotal\": 90.5600000000004,\n            \"householdMeterTotal\": 114.77999999999992,\n            \"difference\": 24.219999999999516,\n            \"percentageDifference\": 26.744699646642456,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 13.93% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815953338,\n            \"areaMeterTotal\": 113.09999999999945,\n            \"householdMeterTotal\": 97.34999999999997,\n            \"difference\": 15.749999999999488,\n            \"percentageDifference\": 13.925729442970436,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 1267.00% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815983345,\n            \"areaMeterTotal\": 31.030000000000655,\n            \"householdMeterTotal\": 424.17999999999995,\n            \"difference\": 393.1499999999993,\n            \"percentageDifference\": 1266.9996777311987,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 333.59% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744816013360,\n            \"areaMeterTotal\": 75.21999999999935,\n            \"householdMeterTotal\": 326.15,\n            \"difference\": 250.93000000000063,\n            \"percentageDifference\": 333.5947886200516,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q4\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q4: 11.63% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815953341,\n            \"areaMeterTotal\": 53.81000000000006,\n            \"householdMeterTotal\": 60.06999999999999,\n            \"difference\": 6.259999999999934,\n            \"percentageDifference\": 11.633525367032014,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q4\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q4: 46.25% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744815983348,\n            \"areaMeterTotal\": 91.25999999999999,\n            \"householdMeterTotal\": 49.05000000000001,\n            \"difference\": 42.20999999999998,\n            \"percentageDifference\": 46.252465483234694,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q4\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q4: 123.08% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744816013364,\n            \"areaMeterTotal\": 38.3900000000001,\n            \"householdMeterTotal\": 85.63999999999999,\n            \"difference\": 47.249999999999886,\n            \"percentageDifference\": 123.07892680385454,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q4\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q4: 26.79% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744816073380,\n            \"areaMeterTotal\": 176.3499999999999,\n            \"householdMeterTotal\": 129.09999999999994,\n            \"difference\": 47.24999999999997,\n            \"percentageDifference\": 26.793308760986672,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q4\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q4: 366.65% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"AREA\",\n            \"timestamp\": 1744816163415,\n            \"areaMeterTotal\": 117.79999999999995,\n            \"householdMeterTotal\": 549.7099999999999,\n            \"difference\": 431.90999999999997,\n            \"percentageDifference\": 366.64685908319194,\n            \"windowSize\": 30000\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all anomalies of Divices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9098/api/anomalies/devices?limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"api",
+						"anomalies",
+						"devices"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all anomalies of Divices",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9098/api/anomalies/devices?limit=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9098",
+							"path": [
+								"api",
+								"anomalies",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7740"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e3c-f31ddFGWehXM9A4H9AN/N70P3bY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Apr 2025 13:16:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"count\": 20,\n    \"limit\": 20,\n    \"startAfter\": null,\n    \"data\": [\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 59.79% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814539296,\n            \"currentConsumption\": 106.28,\n            \"averageConsumption\": 264.28,\n            \"difference\": 157.99999999999997,\n            \"percentageDifference\": 59.78507643408506,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 66.95% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814539304,\n            \"currentConsumption\": 61.22999999999999,\n            \"averageConsumption\": 185.27999999999997,\n            \"difference\": 124.04999999999998,\n            \"percentageDifference\": 66.95272020725389,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 99.98% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814539310,\n            \"currentConsumption\": 287.83,\n            \"averageConsumption\": 143.92999999999998,\n            \"difference\": 143.9,\n            \"percentageDifference\": 99.97915653442647,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 141.81% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744814580922,\n            \"currentConsumption\": 435.0199999999999,\n            \"averageConsumption\": 179.90499999999997,\n            \"difference\": 255.11499999999995,\n            \"percentageDifference\": 141.80539729301574,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 2127.43% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-16\",\n            \"timestamp\": 1744816005771,\n            \"currentConsumption\": 250.93000000000006,\n            \"averageConsumption\": 11.265454545454531,\n            \"difference\": 239.66454545454553,\n            \"percentageDifference\": 2127.4289864428697,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 84.27% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-2\",\n            \"timestamp\": 1744764633844,\n            \"currentConsumption\": 2.6100000000000136,\n            \"averageConsumption\": 16.589999999999975,\n            \"difference\": 13.979999999999961,\n            \"percentageDifference\": 84.26763110307404,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 74.46% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-2\",\n            \"timestamp\": 1744764747001,\n            \"currentConsumption\": 14.629999999999995,\n            \"averageConsumption\": 8.38599999999999,\n            \"difference\": 6.244000000000005,\n            \"percentageDifference\": 74.45742904841417,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 55.66% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-2\",\n            \"timestamp\": 1744764749534,\n            \"currentConsumption\": 4.17999999999995,\n            \"averageConsumption\": 9.426666666666657,\n            \"difference\": 5.246666666666707,\n            \"percentageDifference\": 55.65770862800614,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 93.61% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-2\",\n            \"timestamp\": 1744764751937,\n            \"currentConsumption\": 16.799999999999955,\n            \"averageConsumption\": 8.677142857142842,\n            \"difference\": 8.122857142857113,\n            \"percentageDifference\": 93.61211722094154,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 87.61% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-3\",\n            \"timestamp\": 1744764634203,\n            \"currentConsumption\": 0.7100000000000364,\n            \"averageConsumption\": 5.730000000000018,\n            \"difference\": 5.019999999999982,\n            \"percentageDifference\": 87.60907504362943,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 438.51% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-3\",\n            \"timestamp\": 1744764687115,\n            \"currentConsumption\": 17.339999999999918,\n            \"averageConsumption\": 3.2200000000000273,\n            \"difference\": 14.11999999999989,\n            \"percentageDifference\": 438.5093167701792,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 52.67% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-3\",\n            \"timestamp\": 1744764709196,\n            \"currentConsumption\": 4.160000000000082,\n            \"averageConsumption\": 8.79000000000002,\n            \"difference\": 4.629999999999939,\n            \"percentageDifference\": 52.6734926052324,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 96.82% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-3\",\n            \"timestamp\": 1744764747616,\n            \"currentConsumption\": 0.25,\n            \"averageConsumption\": 7.864000000000033,\n            \"difference\": 7.614000000000033,\n            \"percentageDifference\": 96.8209562563581,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 108.34% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-3\",\n            \"timestamp\": 1744764749924,\n            \"currentConsumption\": 13.740000000000009,\n            \"averageConsumption\": 6.595000000000027,\n            \"difference\": 7.144999999999982,\n            \"percentageDifference\": 108.33965125094696,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 83.31% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-3\",\n            \"timestamp\": 1744764751358,\n            \"currentConsumption\": 13.960000000000036,\n            \"averageConsumption\": 7.6157142857143105,\n            \"difference\": 6.344285714285726,\n            \"percentageDifference\": 83.30519602326005,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 75.55% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-56\",\n            \"timestamp\": 1744814539294,\n            \"currentConsumption\": 81.94,\n            \"averageConsumption\": 335.12,\n            \"difference\": 253.18,\n            \"percentageDifference\": 75.54905705418955,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 201.86% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-56\",\n            \"timestamp\": 1744814539309,\n            \"currentConsumption\": 338.47,\n            \"averageConsumption\": 112.12800000000001,\n            \"difference\": 226.342,\n            \"percentageDifference\": 201.86037385844747,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 3428.80% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-56\",\n            \"timestamp\": 1744815953422,\n            \"currentConsumption\": 422.65,\n            \"averageConsumption\": 11.977142857142853,\n            \"difference\": 410.67285714285714,\n            \"percentageDifference\": 3428.8048664122152,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 101.90% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-7\",\n            \"timestamp\": 1744764634537,\n            \"currentConsumption\": 9.550000000000011,\n            \"averageConsumption\": 4.730000000000018,\n            \"difference\": 4.819999999999993,\n            \"percentageDifference\": 101.9027484143758,\n            \"windowSize\": 30000\n        },\n        {\n            \"areaId\": \"area_HCMC_Q3\",\n            \"severity\": \"HIGH\",\n            \"message\": \"Anomaly detected in area area_HCMC_Q3: 86.13% difference\",\n            \"analysisType\": \"RxJS Window\",\n            \"typeof\": \"DEVICE\",\n            \"deviceId\": \"household-HCMC-Q3-7\",\n            \"timestamp\": 1744764687706,\n            \"currentConsumption\": 13.29000000000002,\n            \"averageConsumption\": 7.140000000000015,\n            \"difference\": 6.150000000000006,\n            \"percentageDifference\": 86.1344537815125,\n            \"windowSize\": 30000\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
