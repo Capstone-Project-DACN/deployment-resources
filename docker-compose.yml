@@ -144,9 +144,14 @@ services:
       MINIO_ACCESS_KEY: myminioadmin
       MINIO_SECRET_KEY: myminioadmin
       KAFKA_BROKER: http://kafka:29092
-      KAFKA_HOUSEHOLD_TOPIC: household_HCMC_Q1_raw 
-      KAFKA_AREA_TOPIC: area_HCMC_Q1_raw
+      KAFKA_HOUSEHOLD_TOPIC: household_data
+      KAFKA_AREA_TOPIC: area_data
       KAFKA_MAX_OFFSET: 500
+      DASHBOARD_PORT: 4041
+      SPARK_UI_PORT: 4040
+    ports:
+      - "4040:4040"
+      - "4041:4041"
     depends_on:
       - minio
       - kafka
