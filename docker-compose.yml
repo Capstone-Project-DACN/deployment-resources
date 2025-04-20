@@ -175,6 +175,7 @@ services:
       - "3002:3002"
     restart: unless-stopped
     environment:
+      PORT: 3002
       MINIO_ENDPOINT: minio
       MINIO_PORT: 9000
       MINIO_ACCESS_KEY: myminioadmin
