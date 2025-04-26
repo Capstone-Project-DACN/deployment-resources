@@ -1,0 +1,63 @@
+name: Deployment Resources - Receive and Build
+
+on:
+  workflow_dispatch:     # Allow manual trigger
+  repository_dispatch:   # Allow external repo to trigger
+    types: [dependency_updated]
+
+jobs:
+  who-triggered-me:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Trigger Info
+        run: |
+          echo "### 🚀 Deployment Resources Trigger Summary" >> $GITHUB_STEP_SUMMARY
+          echo "Triggered by: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            echo "Triggered by repo: ${{ github.event.client_payload.triggered_by }}" >> $GITHUB_STEP_SUMMARY
+            echo '`repository_dispatch` payload:' >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            echo '${{ toJson(github.event.client_payload) }}' | jq . >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "Manual trigger" >> $GITHUB_STEP_SUMMARY
+          fi
+  
+  build-data-source-service:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          repository: Capstone-Project-DACN/collection-tier
+          token: ${{ secrets.COMMON_BUILD_REPO_TOKEN }}
+          path: service/collection-tier/data-source-service
+
+      - name: Build and Push Docker Image
+        run: |
+          cd service/collection-tier/data-source-service
+          IMAGE_NAME=github-action-data-source-service
+          TAG=latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG} .
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG}
+  
+  build-collection-tier-service:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          repository: Capstone-Project-DACN/collection-tier
+          token: ${{ secrets.COMMON_BUILD_REPO_TOKEN }}
+          path: service/collection-tier/producer-service
+
+      - name: Build and Push Docker Image
+        run: |
+          cd service/collection-tier/producer-service
+          IMAGE_NAME=github-action-collection-tier-service
+          TAG=latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG} .
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG}
+
