@@ -155,6 +155,7 @@ services:
     depends_on:
       - minio
       - kafka
+      
   minio:
     image: quay.io/minio/minio:latest
     container_name: minio
@@ -189,22 +190,29 @@ services:
     ports:
       - "9098:4000"
     environment:
-      BOOTSTRAP_SERVER: kafka:29092
-      DATASOURCE_SERVER: http://data-source-service/data
-      WINDOWSIZE: 90000
-      CRON_TIME: '*/1 * * * * *'
-      ANOMALY_THRESHOLD: 5
       PORT: 4000
-      MINIO_ENDPOINT: minio
+      WINDOW_TIME: 300000
+      AREA_ANOMALY_THRESHOLD: 5
+      DEVICE_ANOMALY_THRESHOLD: 50
+      MINIMUM_DELTA_CONSUMPTION: 100
+      BOOTSTRAP_SERVER: kafka:29092
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      HOUSEHOLD_TOPIC: household_data
+      DISTRICT_TOPIC: area_data
+      ALERT_TOPIC: anomaly_alert
       MINIO_PORT: 9000
+      MINIO_ENDPOINT: minio
       MINIO_ACCESS_KEY: myminioadmin
       MINIO_SECRET_KEY: myminioadmin
       DISTRICT_ANOMALY_BUCKET: district-anomaly-data
       DEVICE_ANOMALY_BUCKET: device-anomaly-data
       KAFKA_GROUP_ID: anomaly-detector-group
       MINIO_USE_SSL: false
-      DEVICE_ANOMALY_THRESHOLD: 50
-      MINIMUM_DELTA_CONSUMPTION: 100
+      DATASOURCE_SERVER: data-source-service-container/data
+      CRON_TIME: '*/1 * * * * *'
+    
+
     depends_on:
       - kafka
       - minio
