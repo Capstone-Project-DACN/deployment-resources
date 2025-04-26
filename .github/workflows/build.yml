@@ -31,7 +31,11 @@ jobs:
         with:
           repository: Capstone-Project-DACN/collection-tier
           token: ${{ secrets.COMMON_BUILD_REPO_TOKEN }}
-          path: service/collection-tier/data-source-service
+          path: service/collection-tier
+      
+      - name: List files in the checkout directory for debugging
+        run: |
+          ls -alh service/collection-tier
 
       - name: Build and Push Docker Image
         run: |
@@ -50,7 +54,11 @@ jobs:
         with:
           repository: Capstone-Project-DACN/collection-tier
           token: ${{ secrets.COMMON_BUILD_REPO_TOKEN }}
-          path: service/collection-tier/producer-service
+          path: service/collection-tier
+          
+      - name: List files in the checkout directory for debugging
+        run: |
+          ls -alh service/collection-tier
 
       - name: Build and Push Docker Image
         run: |
