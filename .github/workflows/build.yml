@@ -24,6 +24,7 @@ jobs:
           fi
   
   build-data-source-service:
+    needs: [who-triggered-me]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -47,6 +48,7 @@ jobs:
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG}
   
   build-collection-tier-service:
+    needs: [who-triggered-me]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
