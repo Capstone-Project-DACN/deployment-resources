@@ -166,5 +166,19 @@ jobs:
 
             docker compose --env-file .env.prod -f docker-compose.prod.yml pull
             docker compose --env-file .env.prod -f docker-compose.prod.yml up -d
+            
+            echo "Checking service status..."
+            docker compose --env-file .env.prod -f docker-compose.prod.yml ps
+
+            echo "Checking container health (if defined)..."
+            unhealthy_containers=$(docker ps -q | xargs -n1 docker inspect --format '{{ .Name }} {{ .State.Health.Status }}' | grep -E 'unhealthy' || true)
+
+            if [ -n "$unhealthy_containers" ]; then
+              echo "❌ Unhealthy containers detected:"
+              echo "$unhealthy_containers"
+              exit 1
+            else
+              echo "✅ All containers are healthy."
+            fi
           EOF
 
