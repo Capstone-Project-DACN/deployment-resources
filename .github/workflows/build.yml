@@ -183,7 +183,7 @@ jobs:
           chmod 600 ${{ runner.temp }}/client.ovpn
 
       - name: Connect to VPN
-        uses: "kota65535/github-openvpn-connect-action@v2"
+        uses: "kota65535/github-openvpn-connect-action@v3.1.0"
         with:
           config_file: ${{ runner.temp }}/client.ovpn
           username: ${{ secrets.OPENVPN_USERNAME }}
