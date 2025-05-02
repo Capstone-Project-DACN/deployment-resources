@@ -95,8 +95,32 @@ jobs:
           echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG}
 
+  build-analysis-tier:
+    needs: [build-data-source-service, build-collection-tier-service]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          repository: Capstone-Project-DACN/analysis-tier
+          token: ${{ secrets.COMMON_BUILD_REPO_TOKEN }}
+          path: service/analysis-tier
+          
+      - name: List files in the checkout directory for debugging
+        run: |
+          ls -alh service/analysis-tier
+
+      - name: Build and Push Docker Image
+        run: |
+          cd service/analysis-tier
+          IMAGE_NAME=github-action-analysis-tier
+          TAG=latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG} .
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG}
+
   build-data-access-tier:
-    needs: [build-anomaly-detection]
+    needs: [build-anomaly-detection, build-analysis-tier]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -144,7 +168,7 @@ jobs:
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG}
 
   deploy-to-ec2:
-    needs: [who-triggered-me, build-data-source-service, build-collection-tier-service, build-anomaly-detection, build-data-access-tier, build-capstone-web]
+    needs: [who-triggered-me, build-data-source-service, build-collection-tier-service, build-anomaly-detection, build-analysis-tier, build-data-access-tier, build-capstone-web]
     runs-on: ubuntu-latest
 
     steps:
