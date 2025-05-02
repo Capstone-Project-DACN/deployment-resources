@@ -113,7 +113,7 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           cd service/analysis-tier
-          IMAGE_NAME=github-action-analysis-tier
+          IMAGE_NAME=github-action-spark
           TAG=latest
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${TAG} .
           echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
