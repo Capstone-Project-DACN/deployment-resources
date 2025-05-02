@@ -175,7 +175,7 @@ jobs:
       - name: Install OpenVPN
         run: |
           sudo apt update
-          sudo apt install -y openvpn3 openvpn-systemd-resolved
+          sudo apt install -y openvpn openvpn-systemd-resolved
 
       - name: Create OpenVPN Config File
         run: |
