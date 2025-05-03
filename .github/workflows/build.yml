@@ -208,14 +208,17 @@ jobs:
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e
             cd ${{secrets.PROJECT_DIRECTORY}}
-            git checkout main
-            git pull origin main
-
+            echo "Current working directory: " && pwd
+            echo "Check github connection via SSH: " && ssh -vT git@github.com
+            echo "Check remote origin repository: " && git remote -v
+            echo "Check out to the main branch: " && git checkout main
+            echo "Pull latest changes from the remote repository: " && git pull origin main
             echo "After pulling latest changes " && pwd && ls
 
             echo "DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}" > .env.prod
             echo "EC2_HOST=${{ secrets.EC2_HOST }}" > .env.prod
 
+            echo "------Start deployment using docker compose file------"
             docker compose --env-file .env.prod -f docker-compose.prod.yml pull
             docker compose --env-file .env.prod -f docker-compose.prod.yml up -d
             
