@@ -207,9 +207,11 @@ jobs:
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e
-            cd /${{secrets.PROJECT_DIRECTORY}}  # <-- change this to where you cloned deployment-resources repo on EC2
+            cd ${{secrets.PROJECT_DIRECTORY}}
             git checkout main
             git pull origin main
+
+            echo "After pulling latest changes " && pwd && ls
 
             echo "DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}" > .env.prod
             echo "EC2_HOST=${{ secrets.EC2_HOST }}" > .env.prod
