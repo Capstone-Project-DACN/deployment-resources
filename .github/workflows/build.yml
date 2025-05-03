@@ -201,13 +201,13 @@ jobs:
 
       - name: Test EC2 Connection and List Files
         run: |
-          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'echo "Successfully connected to EC2!" && pwd && ls -al'
+          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 'echo "Successfully connected to EC2!" && pwd && ls -al ${{secrets.PROJECT_DIRECTORY}}'
 
       - name: Pull latest and run docker-compose
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e
-            cd /capstone/deployment-resources  # <-- change this to where you cloned deployment-resources repo on EC2
+            cd /${{secrets.PROJECT_DIRECTORY}}  # <-- change this to where you cloned deployment-resources repo on EC2
             git checkout main
             git pull origin main
 
