@@ -188,9 +188,6 @@ jobs:
           config_file: ${{ runner.temp }}/client.ovpn
           username: ${{ secrets.OPENVPN_USERNAME }}
           password: ${{ secrets.OPENVPN_PASSWORD }}
-
-      - name: Test Ping to EC2 (Optional, if ICMP allowed)
-        run: ping -c 5 ${{ secrets.EC2_HOST }} || true
       
       - name: Test SSH Port Connectivity with Netcat
         run: nc -vz ${{ secrets.EC2_HOST }} 22
@@ -210,7 +207,7 @@ jobs:
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e
-            cd /path/to/deployment-resources  # <-- change this to where you cloned deployment-resources repo on EC2
+            cd /capstone/deployment-resources  # <-- change this to where you cloned deployment-resources repo on EC2
             git checkout main
             git pull origin main
 
