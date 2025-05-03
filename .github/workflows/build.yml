@@ -189,6 +189,12 @@ jobs:
           username: ${{ secrets.OPENVPN_USERNAME }}
           password: ${{ secrets.OPENVPN_PASSWORD }}
 
+      - name: Test Ping to EC2 (Optional, if ICMP allowed)
+        run: ping -c 5 ${{ secrets.EC2_HOST }} || true
+      
+      - name: Test SSH Port Connectivity with Netcat
+        run: nc -vz ${{ secrets.EC2_HOST }} 22
+
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
