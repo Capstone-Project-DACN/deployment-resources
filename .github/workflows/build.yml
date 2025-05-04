@@ -207,16 +207,14 @@ jobs:
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             set -e
-            echo "############### Check .ssh/ permission: " && ls -al .ssh
 
             echo "############### Starting ssh-agent and adding key: "
             eval $(ssh-agent -s)
-            ssh-add ~/.ssh/capstone_github
+            ssh-add ${{ secrets.PROJECT_SSH_KEY_DIRECTORY }}
             echo "Key added to agent."
             
             cd ${{secrets.PROJECT_DIRECTORY}}
             echo "############### Current working directory: " && pwd
-            echo "############### Check github connection via SSH: " && ssh -vT git@github.com || true
             echo "############### Check remote origin repository: " && git remote -v
             echo "############### Check out to the main branch: " && git checkout main
             echo "############### Pull latest changes from the remote repository: " && git pull origin main
