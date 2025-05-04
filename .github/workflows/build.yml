@@ -216,7 +216,7 @@ jobs:
             
             cd ${{secrets.PROJECT_DIRECTORY}}
             echo "############### Current working directory: " && pwd
-            echo "############### Check github connection via SSH: " && ssh -vT git@github.com
+            echo "############### Check github connection via SSH: " && ssh -vT git@github.com || true
             echo "############### Check remote origin repository: " && git remote -v
             echo "############### Check out to the main branch: " && git checkout main
             echo "############### Pull latest changes from the remote repository: " && git pull origin main
