@@ -220,8 +220,8 @@ jobs:
             echo "############### Pull latest changes from the remote repository: " && git pull origin main
             echo "############### After pulling latest changes " && pwd && ls
 
-            echo "DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}" > .env.prod
-            echo "EC2_HOST=${{ secrets.EC2_HOST }}" > .env.prod
+            export DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            export EC2_HOST=${{ secrets.EC2_HOST }}
 
             echo "------Start deployment using docker compose file------"
             docker compose --env-file .env.prod -f docker-compose.prod.yml pull
